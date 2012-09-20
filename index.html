@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Uso Bootstrap</title>
+    <meta name="description" content="Chin se me olvido">
+    <meta name="author" content="JRaul">
+    <![if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+	<link href="css/estilo.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>		
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<button class="btn"> Pomodoro </button>
+				<span class="reloj">00:00</span>
+				<h1> Tareas </h1>
+				<ul class="Tareas">
+					<li>Tarea 1</li>
+					<li>Tarea 2</li>
+					<li>Tarea 3</li>
+					<li>Tarea 4</li>
+					<li>Tarea 5</li>
+					<li>Tarea 6</li>
+				</ul>
+			</div>
+			<div class="span10">
+				<h1> Tarea </h1>
+				<article class="Tarea">					
+					<span> Alimentar al perro </span>				
+				</article>
+			</div>
+		</div>
+	</div>	
+	<script>
+	
+	var tareas = {};
+	
+	tareas['Tarea 1'] = 'Alimentar al perro';
+	tareas['Tarea 2'] = 'Alimentar al gato';
+	tareas['Tarea 3'] = 'Alimentar al perico';
+	tareas['Tarea 4'] = 'Alimentar al tortuga';
+	tareas['Tarea 5'] = 'Alimentar al peces';
+	tareas['Tarea 6'] = 'Alimentar a la vaca';
+	
+	$('.Tareas li').click(function(){
+		$('.Tarea span').text(tareas[$(this).text()]);		
+		
+	});	
+	  $('button:first').click(function(){
+	  
+		if( $('.reloj').html() != '00:00')
+			return;
+			
+		var tiempo = 25 * 60;
+		var t = tiempo;
+		
+		$('.reloj').text(convhora(tiempo));
+		
+		var fun = (function(){
+		
+			var f = convhora(tiempo);
+			tiempo -= 1;						
+			$('.reloj').text(f);
+		});
+		
+		var reloj = setInterval(fun,1000);
+		setTimeout(function(){clearInterval(reloj);},(t + 2) * 1000);		    
+	  });
+		  
+		function convhora(tiempo){
+			return formato(Math.floor(tiempo / 60)) + ':' + formato(tiempo % 60);
+		}
+		
+		function formato(n){
+			return n < 10 ?'0' + n:n;		
+		}
+		
+	</script>
+  </body>
+</html>

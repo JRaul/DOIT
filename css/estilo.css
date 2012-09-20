@@ -1,0 +1,40 @@
+.Tarea article{
+	background-color:#F6FF67;
+	border-radius: 15px 15px 15px 15px;	
+} 
+
+.prin{
+	font-size: 30px;
+	line-height: 30px;
+
+}
+
+
+
+
+body{
+//	background-color:#34FCE8;
+}
+
+h1{
+	text-align:center;	
+	background-color:#FFFFFE;
+
+}
+
+hr.soften{
+	height: 1px;
+	margin: 70px 0;
+}
+
+
+.Tareas li{
+	background-color:#F6FF67;
+	list-style:none;	
+	text-align:center;	
+}
+
+
+.Tareas li:hover {
+	border:1px solid #666666;	
+}

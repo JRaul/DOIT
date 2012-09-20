@@ -1,0 +1,24 @@
+A Hacer:
+
+Entrega diablo:
+
+	Crear pagina de login:
+		*Una breve descripcion de la pagina.
+		*Boton de para registro.
+		Cuadrar pagina.
+		Descripcion de pomodoro.
+		Descripcion de GTD.
+		Centrar imagenes
+		
+		
+	Registro:
+		*Centrar formulario.
+		Poner mejor fondo.
+		
+	Tareas:
+		Mejor fondo.
+		Poner mejor ejemplo de uso.
+
+General:
+
+Usar un lenguaje servidor
